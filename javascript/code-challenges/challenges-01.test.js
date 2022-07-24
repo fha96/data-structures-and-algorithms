@@ -64,17 +64,16 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 
 const greeting = (word) => {
   // Solution code here...
-  const newArray=[];
-  word.forEach(letter => {
-    newArray.push(letter.toUpperCase()+"!")
-  });
-  return newArray;
+  const newTem=word.toUpperCase()+"!"
+  return newTem;
 };
 
 const speaker = (words, callback) => {
   // Solution code here...
   const newArray =[];
-  words.forEach(callback);
+  words.forEach(temp =>{
+    newArray.push(callback(temp));
+  });
   return newArray;
 };
 
@@ -127,11 +126,10 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
-  const groceryList=[{}];
+  const groceryList=[];
   availableItems.forEach(check => {
-    
-    if(check.available === true){
-      groceryList.push(check[i]);
+    if(check.available){
+      groceryList.push(check.name);
     }} )
   return groceryList; 
 };
